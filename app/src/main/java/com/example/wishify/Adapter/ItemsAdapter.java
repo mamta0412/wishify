@@ -1,0 +1,74 @@
+package com.example.wishify.Adapter;
+
+import android.net.Uri;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.wishify.ItemsModel;
+import com.example.wishify.R;
+
+import java.util.ArrayList;
+
+public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
+    //import RecyclerItemsClickView
+    private final RecyclerItemsClickView recyclerItemsClickView;
+    private ArrayList<ItemsModel> itemsModels;
+
+    public ItemsAdapter(ArrayList<ItemsModel>itemsModels, RecyclerItemsClickView recyclerItemsClickView){
+        this.recyclerItemsClickView=recyclerItemsClickView;
+        this.itemsModels=itemsModels;
+    }
+
+    @NonNull
+    @Override
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.single_item,parent,false);
+        return new ItemViewHolder(view);
+    }
+    // Binding  holder method
+    @Override
+    public void onBindViewHolder(@NonNull ItemsAdapter.ItemViewHolder holder, int position) {
+        ItemsModel itemsModel=itemsModels.get(position);
+        holder.txt_name.setText(itemsModel.getName());
+        if (itemsModel.isPurchased()){
+            holder.txt_name.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_check,0);
+        }
+        holder.txt_name.setText(itemsModel.getName());
+        holder.txt_description.setText(itemsModel.getDescription());
+        Uri imageUri=itemsModel.getImage();
+        if (imageUri !=null){
+            holder.imageView.setImageURI(imageUri);
+        }
+    }
+
+
+    // items count
+    @Override
+    public int getItemCount() {
+        return itemsModels.size();
+    }
+    public class ItemViewHolder extends RecyclerView.ViewHolder{
+        ImageView imageView;
+        TextView txt_event,txt_name,txt_description;
+        // connection between xml to bind
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            imageView=itemView.findViewById(R.id.item_image);
+            txt_event=itemView.findViewById(R.id.edit_event_name);
+            txt_name=itemView.findViewById(R.id.item_name);
+            txt_description=itemView.findViewById(R.id.item_dis);
+            itemView.setOnClickListener(this::itemViewOnClick);
+        }
+        //recycler click view
+        private void itemViewOnClick(View view){
+            recyclerItemsClickView.onItemClick(view,getAdapterPosition());
+        }
+    }
+}

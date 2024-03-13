@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    tools:context=".Add_Items">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="10dp"
+        >
+    </de.hdodenhof.circleimageview.CircleImageView>
+    <EditText
+        android:id="@+id/item_event"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_edittext"
+        android:hint="     Enter Event Name"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_edittext"
+        android:hint="      Enter Items Name"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        />
+    <Button
+        android:id="@+id/add_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Add Items "
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:backgroundTint="#2D939E"
+        android:layout_marginTop="10dp"
+        app:cornerRadius = "20dp"
+
+        />
+</LinearLayout>
