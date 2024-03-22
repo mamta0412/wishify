@@ -18,20 +18,32 @@
         >
     </de.hdodenhof.circleimageview.CircleImageView>
     <EditText
-        android:id="@+id/item_event"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/custom_edittext"
-        android:hint="     Enter Event Name"
-        android:layout_marginTop="10dp"
-        android:inputType="text"
-        />
-    <EditText
         android:id="@+id/item_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/custom_edittext"
-        android:hint="      Enter Items Name"
+        android:hint="Enter Item Name"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/item_price"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_edittext"
+        android:hint="Enter Items Price"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/item_description"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_edittext"
+        android:hint="Enter Items Description"
+        android:padding="15dp"
         android:layout_marginTop="10dp"
         android:inputType="text"
         />

@@ -27,7 +27,7 @@ public class Items_Details_Page extends AppCompatActivity {
     // get Intent
 
     public static Intent getIntent(Context context,int id){
-        Intent intent=new Intent(context,ItemsDetailsBinding.class);
+        Intent intent=new Intent(context,Items_Details_Page.class);
         intent.putExtra(ID,id);
         return intent;
     }
@@ -49,9 +49,9 @@ public class Items_Details_Page extends AppCompatActivity {
 
         item=retrieveData(id);
         binding.imageViewItem.setImageURI(item.getImage());
-        binding.textViewEvent.setText(item.getName());
-        binding.textViewName.setText(String.valueOf(item.getName()));
-
+        binding.textViewName.setText(item.getName());
+        binding.textViewPrice.setText(String.valueOf(item.getPrice()));
+        binding.textViewDescription.setText(item.getDescription());
 
         //click Method of Edit Button
 

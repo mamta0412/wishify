@@ -56,13 +56,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     }
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
-        TextView txt_event,txt_name,txt_description;
+        TextView txt_name,txt_price,txt_description;
         // connection between xml to bind
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.item_image);
-            txt_event=itemView.findViewById(R.id.edit_event_name);
             txt_name=itemView.findViewById(R.id.item_name);
+            txt_price=itemView.findViewById(R.id.item_price);
             txt_description=itemView.findViewById(R.id.item_dis);
             itemView.setOnClickListener(this::itemViewOnClick);
         }

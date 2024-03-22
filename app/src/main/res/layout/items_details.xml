@@ -24,12 +24,12 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textViewEvent"
+        android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:paddingHorizontal="8dp"
-        android:text="Event"
+        android:text="Name"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -39,21 +39,36 @@
         app:layout_constraintTop_toBottomOf="@id/imageViewItem" />
 
     <TextView
-        android:id="@+id/textViewName"
+        android:id="@+id/textViewPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:foregroundGravity="bottom"
         android:paddingHorizontal="8dp"
         android:paddingBottom="8dp"
-        android:text="Name"
+        android:text="Price"
         android:textAlignment="textStart"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewEvent" />
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="5"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="8dp"
+        android:text="This is description"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
 
     <LinearLayout
         android:layout_width="175dp"
@@ -72,8 +87,12 @@
         android:padding="10dp"
         android:text="Edit"
         app:cornerRadius="30dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="369dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -84,8 +103,12 @@
         android:padding="10dp"
         android:text="Share"
         app:cornerRadius="30dp"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="369dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577"
         tools:ignore="MissingConstraints" />
 
 

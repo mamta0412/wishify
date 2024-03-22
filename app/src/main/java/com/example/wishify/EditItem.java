@@ -60,8 +60,8 @@ public class EditItem extends AppCompatActivity {
         }catch (NullPointerException e){
             Toast.makeText(this, "Error occurred in identifying Image ", Toast.LENGTH_SHORT).show();
         }
-        binding.editEventName.setText(name);
-        binding.editItemName.setText(price);
+        binding.editItemName.setText(name);
+        binding.editItemPrice.setText(price);
         binding.editItemDescription.setText(description);
         binding.editItemImage.setImageURI(imageUri);
 

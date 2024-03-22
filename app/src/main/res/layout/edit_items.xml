@@ -33,10 +33,10 @@
         android:focusableInTouchMode="true"
         android:focusable="true">
         <EditText
-            android:id="@+id/edit_event_name"
+            android:id="@+id/edit_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Event Name"
+            android:hint="Enter Item Name"
             android:inputType="text"
             android:background="@drawable/custom_edittext"
 
@@ -49,10 +49,10 @@
         android:focusableInTouchMode="true"
         android:focusable="true">
         <EditText
-            android:id="@+id/edit_item_name"
+            android:id="@+id/edit_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Item Name"
+            android:hint="Enter Item Price"
             android:inputType="number"
             android:background="@drawable/custom_edittext"
             />

@@ -37,20 +37,33 @@ public class Add_Items extends AppCompatActivity {
 
     //Add Item Method and form validation also
     private void saveItem(View view) {
-        //Item Event
-        String event = binding.itemEvent.getText().toString().trim();
-        if (event.isEmpty()) {
-            binding.itemEvent.setError("Event field is empty");
-            binding.itemEvent.requestFocus();
-        }
         //Item Name
         String name = binding.itemName.getText().toString().trim();
         if (name.isEmpty()) {
-            binding.itemName.setError("Name is empty ");
+            binding.itemName.setError("Name field is empty");
             binding.itemName.requestFocus();
         }
+        //Item Price
+        double price = 0;
+        try {
+            price = Double.parseDouble(binding.itemPrice.getText().toString().trim());
 
-        if (items_dbHelper.insertItem(event , name, imageUri.toString()) ){
+        } catch (NullPointerException e) {
+            Toast.makeText(this, "Something wrong with price ", Toast.LENGTH_SHORT).show();
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Price should be a number", Toast.LENGTH_SHORT).show();
+        }
+        if (price <= 0) {
+            binding.itemPrice.setError("price should be greater than 0 . ");
+            binding.itemPrice.requestFocus();
+        }
+        //Item Description
+        String description = binding.itemDescription.getText().toString().trim();
+        if (description.isEmpty()) {
+            binding.itemDescription.setError("Description is empty ");
+            binding.itemDescription.requestFocus();
+        }
+        if (items_dbHelper.insertItem(name, price, description, imageUri.toString(), false)) {
             Toast.makeText(this, "Save Successfully", Toast.LENGTH_SHORT).show();
             finish();
         }

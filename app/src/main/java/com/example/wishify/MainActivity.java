@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wishify.Adapter.ItemsAdapter;
 import com.example.wishify.Adapter.RecyclerItemsClickView;
-import com.example.wishify.databinding.MainBinding;
+import  com.example.wishify.databinding.MainBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -101,8 +101,10 @@ public class MainActivity extends AppCompatActivity {
                             items_dbHelper.update(
                                     itemsModel.getId(),
                                     itemsModel.getName(),
-                                    itemsModel.getName(),
-                                    itemsModel.getImage().toString()
+                                    itemsModel.getPrice(),
+                                    itemsModel.getDescription(),
+                                    itemsModel.getImage().toString(),
+                                    itemsModel.isPurchased()
                             );
                             itemsAdapter.notifyItemChanged(position);
                             Toast.makeText(MainActivity.this, "Item is Updated ", Toast.LENGTH_SHORT).show();
